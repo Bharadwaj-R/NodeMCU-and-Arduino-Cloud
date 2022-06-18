@@ -58,7 +58,8 @@ A thing is the main project area where the code is written. It associates the de
 - Just below is a Network sub-section. Select "Configure" option and enter your WiFi details in the provided space.
 - Also, enter the secret key that was generated previously. 
 
-Note that for each variable that is added into the thing, there is a function that is created in the "Sketch" part that is associated with the variable. This variable is what syncs the data between the cloud and the devices.
+Note that for each variable that is added into the thing, there is a function that is created in the "Sketch" part that is associated with the variable. This variable is what syncs the data between the cloud and the devices.  
+<br/>
 
 ***Coding the NodeMCU :***  
 Most of the code is pre-written by the Arduino Cloud, and we just need to do some changes inside the functions. If you selected the variable to be of "On Change" type, then the function corresponding to the variable will get executed everytime the value of the variable changes.
