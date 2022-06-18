@@ -40,4 +40,27 @@ Use a breadboard for connections.
 - Cathode of the LED is connected to ground.
 <br/>
 
-#### Full detials will be uploaded soon. Please Standby!
+### Setting up the Arduino Cloud Environment  
+***Adding a new Device :***
+- Hover over to Arduino Cloud website ([Click Here](https://cloud.arduino.cc)) and register for an account.
+- Once registered, go to the "Devices" section and add a new device.
+- Select third-party device and ESP8266. After that, select the model of NodeMCU you have from the drop down menu. Click on continue.
+- Give it an appropirate name and click on continue. 
+- A device ID and a secret key are generated. Save them safely, as we will need them later in the process.
+<br/>
+
+***Creating a Thing :***  
+A thing is the main project area where the code is written. It associates the device we created in the previous step with the code. Follow the below steps to create a new thing.  
+- Once a devie is created, head over to the "Things" section and create a new thing.
+- You can rename the thing, and then add some variables that are required. 
+- Now, in the "Associated Device" section, click on Select Device.
+- In the new window, select the device previously created to associate with the thing.
+- Just below is a Network sub-section. Select "Configure" option and enter your WiFi details in the provided space.
+- Also, enter the secret key that was generated previously. 
+
+Note that for each variable that is added into the thing, there is a function that is created in the "Sketch" part that is associated with the variable. This variable is what syncs the data between the cloud and the devices.
+
+***Coding the NodeMCU :***  
+Most of the code is pre-written by the Arduino Cloud, and we just need to do some changes inside the functions. If you selected the variable to be of "On Change" type, then the function corresponding to the variable will get executed everytime the value of the variable changes.
+
+#### Full details will be updated soon. Please standby!
