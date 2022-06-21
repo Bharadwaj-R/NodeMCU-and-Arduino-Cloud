@@ -31,7 +31,7 @@ We will learn the basics of NodeMCU Programming and it's integration with Arduin
 - Arduino IoT Cloud ([Register](https://cloud.arduino.cc))
 - Drivers for NodeMCU ([Download](https://github.com/nodemcu/nodemcu-devkit/tree/master/Drivers))
 - Arduino Create Agent ([Download](https://support.arduino.cc/hc/en-us/articles/360014869820-Install-the-Arduino-Create-Agent))
-<br/>  
+<br/>
 
 ### Setting up the Arduino Cloud Environment  
 ***Adding a new Device :***
@@ -55,7 +55,7 @@ A thing is the main project area where the code is written. It associates the de
 ***Coding the NodeMCU :***  
 Most of the code is pre-written by the Arduino Cloud, and we just need to do some changes inside the functions. First, head over to the `Sketch` sub-section under the `Things` section. For each variable that is added into the thing, there is a function that is associated with the variable. This variable is what syncs the data between the cloud and the devices. If you selected the variable to be of `On Change` type, then the function corresponding to the variable will get executed everytime the value of the variable changes. But if you select the variable to be of `Periodically` type, then the value of the variable is refreshed periodically and the function related to the variable executes if there any change in it's value is observed.  
 
-Make required changes to the pre-written code and then select the compile option on the top left. After successful compilatioin, you can then upload the code to the NodeMCU. Note that you will need Arduino Create Agent running before you can upload the code, else the device will not get detected. If you are unable to upload the code, but your compilation is successful, please check the [Troubleshoot Section](https://github.com/Bharadwaj-R/NodeMCU-and-Arduino-Cloud/edit/main/Troubleshoot.md#Troubleshoot) at the end of the article for any possible solution.
+Make required changes to the pre-written code and then select the compile option on the top left. After successful compilatioin, you can then upload the code to the NodeMCU. Note that you will need Arduino Create Agent running before you can upload the code, else the device will not get detected. For any errors regarding compiling or uploading, please check the [Troubleshoot Section](https://github.com/Bharadwaj-R/NodeMCU-and-Arduino-Cloud/edit/main/Troubleshoot.md#Troubleshoot).
 
 You can even code using Arduino IDE, but make sure you install `Arduino_ConnectionHandler` and `ArduinoIoTCloud` libraries, and any other associated libraries that the Arduino IDE suggests you to install.  
 <br/>
