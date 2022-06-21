@@ -1,5 +1,5 @@
 # NodeMCU and Arduino Cloud
-### An introduction to NodeMCU - ESP826 and Arduino Cloud 
+### An introduction to NodeMCU - ESP8266 and Arduino Cloud 
 <br/>
 
 ***Introduction to NodeMCU - ESP8266 :***  
@@ -14,7 +14,7 @@ ESP8266 is a low-cost WiFi-enabled microcontroller chip, produced by [Espressif 
 As the chip comes with WiFi on board, it opens up many possibilities that are not generally possible with other beginner-friendly microcontroller development kits like Arduino Uno. One of the important feature of NodeMCU is its ability to connect to Cloud Technologies, such as [Arduino IoT Cloud](https://cloud.arduino.cc), [Blynk IoT Cloud](https://blynk.io/), [ThingSpeak IoT Cloud](https://thingspeak.com/), etc.
 
 ***About Arduino IoT Cloud :***  
-Arduino Cloud is an online cloud platform, that makes it easy for us to collect data, monitor and control devices over the air. It's UI is simple, and easy to navigate and explore. Arduino Cloud has a free plan with limitations, along with some paid subscriptions that give more contorl over the data. It provides us with both a web app for desktop, as well as a mobile application for both iOS and Android. For this project, we are using Arduino Cloud along with NodeMCU to control the LED.  
+Arduino Cloud is an online cloud platform, that makes it easy for us to collect data, monitor and control devices over the air. It's UI is simple, and easy to navigate and explore. Arduino Cloud has a free plan with limitations, along with some paid subscriptions that give more contorl over the data. It provides us with both a web app for desktop, as well as a mobile application for both iOS and Android.  
 <br/>
 
 ***Getting Started :***  
@@ -29,7 +29,7 @@ We will learn the basics of NodeMCU Programming and it's integration with Arduin
 
 ### Setting up the Arduino Cloud Environment  
 ***Adding a new Device :***
-- Hover over to Arduino Cloud website ([Click Here](https://cloud.arduino.cc)) and register for an account.
+- Go to Arduino Cloud website ([Click Here](https://cloud.arduino.cc)) and register there.
 - Once registered, go to the `Devices` section and add a new device.
 - Select third-party device and ESP8266. After that, select the model of NodeMCU you have from the drop down menu. Click on continue.
 - Give it an appropirate name and click on continue. 
@@ -40,14 +40,14 @@ We will learn the basics of NodeMCU Programming and it's integration with Arduin
 A thing is the main project area where the code is written. It associates the device we created in the previous step with the code. Follow the below steps to create a new thing.  
 - Once a devie is created, head over to the `Things` section and create a new thing.
 - You can rename the thing, and then add some variables that are required. 
-- Now, in the `Associated Device` section, click on Select Device.
+- Now, in the `Associated Device` section, click on `Select Device`.
 - In the new window opened, select the device previously created, to associate with the thing.
 - Just below is a `Network` sub-section. Select `Configure` option and enter your WiFi details in the provided space.
 - Also, enter the secret key that was generated previously. 
 <br/>
 
 ***Coding the NodeMCU :***  
-Most of the code is pre-written by the Arduino Cloud, and we just need to do some changes inside the functions. First, head over to the `Sketch` sub-section under the `Things` section. For each variable that is added into the thing, there is a function that is associated with the variable. This variable is what syncs the data between the cloud and the devices. If you selected the variable to be of `On Change` type, then the function corresponding to the variable will get executed everytime the value of the variable changes. But if you select the variable to be of `Periodically` type, then the value of the variable is checked periodically and the function related to the variable executes if there is any change in it's value.  
+Most of the code is pre-written by the Arduino Cloud, and we just need to do some changes inside the functions. First, head over to the `Sketch` sub-section under the `Things` section. For each variable that is added into the thing, there is a function that is associated with the variable. This variable is what syncs the data between the cloud and the devices. If you selected the variable to be of `On Change` type, then the function corresponding to the variable will get executed everytime the value of the variable changes. But if you select the variable to be of `Periodically` type, then the value of the variable is refreshed periodically and the function related to the variable executes if there any change in it's value is observed.  
 
 Make required changes to the pre-written code and then select the compile option on the top left. After successful compilatioin, you can then upload the code to the NodeMCU. Note that you will need Arduino Create Agent running before you can upload the code, else the device will not get detected. If you are unable to upload the code, but your compilation is successful, please check the [Troubleshoot Section](https://github.com/Bharadwaj-R/NodeMCU-and-Arduino-Cloud/edit/main/README.md#troubleshoot) at the end of the article for any possible solution.
 
@@ -73,7 +73,7 @@ This problem generally comes up with generic NodeMCU boards. To solve the issue,
 Another possible solution is to use Arduino IDE offline application. As mentioned above, head over to the Full Editor and from the three-dot menu, select `Download Sketch` option. Once download finishes, extract the `.zip` file and open the `.ino` file. Make sure you type in your WiFi details in the `arduino_secrets.h` file along with the secret key. Verify the device ID in `thingProperties.h` file. Try to compile and upload now.  
 
 ***2. Code compiled and uploaded successfully, but NodeMCU doesn't connect to WiFi :***  
-A possible issue can be one of these - incorrect WiFi SSID, Password, Device Secret Key, or even wrong device ID. Verify all the details in the code. If all the previously mentioned parameters are correct, then check if the WiFi you are trying to connect is 2.4GHz or 5GHz frequency. Most of the NodeMCUs only support 2.4GHz frequency, so verify if the WiFi you provided is of 2.4GHz frequency. Allow atleast 10 seconds for the device to connect to WiFi.  
+A possible issue can be one of these - incorrect WiFi SSID, Password, Device Secret Key, or device ID. Verify all the details in the code. If all the previously mentioned parameters are correct, then check if the WiFi you are trying to connect is 2.4GHz or 5GHz frequency. Most of the NodeMCUs only support 2.4GHz frequency, so verify if the WiFi you provided is of 2.4GHz frequency. Allow atleast 10 seconds for the device to connect to WiFi.  
 
 ***3. Arduino Cloud doesn't detect my NodeMCU :***  
 Firstly, check if Arduino Create Agent is running in the background. If not, then download and open the Arduino Create Agent. Your device must be detected now. If the problem still persists, try uploading a sample code to the NodeMCU using Arduino IDE offline. If the latter is not successful too, then install/update the drivers of the NodeMCU and try again. If nothing from the above works, maybe the NodeMCU is a faulty one. Exchange it for a new device.  
