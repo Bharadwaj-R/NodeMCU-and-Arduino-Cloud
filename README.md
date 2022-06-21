@@ -15,6 +15,12 @@ As the chip comes with WiFi on board, it opens up many possibilities that are no
 
 ***About Arduino IoT Cloud :***  
 Arduino Cloud is an online cloud platform, that makes it easy for us to collect data, monitor and control devices over the air. It's UI is simple, and easy to navigate and explore. Arduino Cloud has a free plan with limitations, along with some paid subscriptions that give more contorl over the data. It provides us with both a web app for desktop, as well as a mobile application for both iOS and Android.  
+
+<p align="center">
+  <kbd>
+    <img src="https://user-images.githubusercontent.com/77038120/174824422-29e21c5a-0a78-4424-ac6a-cf206aeb0d26.png">
+  </kbd>
+</p>
 <br/>
 
 ***Getting Started :***  
